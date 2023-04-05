@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+# Tech test notes:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Issues with codesandbox:
+- Tests that pass locally, dont pass on codesandbox
+- i.e. expect(...).XYZ is not a function, where XYZ is the underlying issue. For example .toBeInTheDocument
+- i.e. focuses on the body element when it should focus on another correct element e.g input. I suspect lines 12, 16 and 19 on Modal.jsx where I invoke document.body.style.overflow is the issue at play. 
 
-## Available Scripts
+If I had more time I would:
+- utilise typescript 
+- implement the modal using react portal
+- describe aria attributes with more informative values 
+- better styling overall
+- replace more px styled elements
+- functional form
+- incorporate media in the modal 
+- more thorough testing
+- fix build errors
 
-In the project directory, you can run:
+TypeScript:
+Can potentially fix type errors for tests 
+
+React Portal: 
+Would implement react portal as per the docs, portal has some desired behaviour over a div modal component as it renders the elements outside the React hierarchy tree without comprising the parent-child relationship between components. I realised that I could of use this after implementing the solution and tests, due to time constraints I didnt implement a react portal.
+
+Describe aria attributes with more informative values:
+Some aria attributes are generic, given more time I would change some of these attributes to be descriptive 
+
+Better styling:
+The index page and modal design isn't particularly aesthetically pleasing and can be styled better.
+
+Replace more px styled elements:
+Replace px styled elements with % and em.
+
+Functional form:
+Give functionality to the form on the modal using Yup and Formik. Implementing validation and a object payload. Object payload would have use values stored in the state. 
+
+Incorporate media in the modal:
+Add an image or video into the modal with the alt text and audio description.
+
+More thorough testing:
+More testing can be implemented to ensure absolutely all elements are compliant. For example the colour contrast test only checks the colour code of the h elements of the modal against the colour code of the background element.
+
+# Getting Started
 
 ### `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
 ### `npm test`
+OR
+### `npm run test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Launches the test runner in the interactive watch mode.
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
+Builds the app for production to the `build` folder.
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The build is minified and the filenames include the hashes.
